@@ -1,4 +1,4 @@
-package cn.nodemedia.mediaclient.utils;
+package cn.serge.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

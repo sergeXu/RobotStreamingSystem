@@ -25,8 +25,8 @@ import java.net.UnknownHostException;
 
 import cn.nodemedia.LivePublisher;
 import cn.nodemedia.LivePublisher.LivePublishDelegate;
-import cn.nodemedia.mediaclient.utils.LogUtil;
-import cn.nodemedia.mediaclient.utils.SharedPreUtil;
+import cn.serge.utils.LogUtil;
+import cn.serge.utils.SharedPreUtil;
 
 public class LivePublisherDemoActivity extends Activity implements OnClickListener, LivePublishDelegate {
     private SurfaceView sv;

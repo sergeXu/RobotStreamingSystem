@@ -1,4 +1,4 @@
-package cn.nodemedia.mediaclient;
+package cn.serge.activity;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.ByteArrayInputStream;
@@ -21,9 +21,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import cn.nodemedia.mediaclient.adapters.MsgAdapter;
-import cn.nodemedia.mediaclient.models.Msg;
-import cn.nodemedia.mediaclient.utils.SharedPreUtil;
+import cn.nodemedia.mediaclient.R;
+import cn.serge.adapters.MsgAdapter;
+import cn.serge.models.Msg;
+import cn.serge.utils.SharedPreUtil;
 
 public class TalkActivity  extends Activity {
 

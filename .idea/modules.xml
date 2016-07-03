@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rtmpVideoRobot.iml" filepath="$PROJECT_DIR$/rtmpVideoRobot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RobotStreamingSystem.iml" filepath="$PROJECT_DIR$/RobotStreamingSystem.iml" />
     </modules>
   </component>
 </project>

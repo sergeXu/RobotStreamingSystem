@@ -1,4 +1,4 @@
-package cn.nodemedia.mediaclient.adapters;
+package cn.serge.adapters;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import cn.nodemedia.mediaclient.R;
-import cn.nodemedia.mediaclient.models.Msg;
+import cn.serge.models.Msg;
 
 public class MsgAdapter extends ArrayAdapter<Msg> {
 

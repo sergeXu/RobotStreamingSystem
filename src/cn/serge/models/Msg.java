@@ -1,4 +1,4 @@
-package cn.nodemedia.mediaclient.models;
+package cn.serge.models;
 
 public class Msg {
 

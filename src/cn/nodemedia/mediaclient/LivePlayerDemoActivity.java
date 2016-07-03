@@ -37,11 +37,11 @@ import android.widget.Toast;
 
 import cn.nodemedia.LivePlayer;
 import cn.nodemedia.LivePlayer.LivePlayerDelegate;
-import cn.nodemedia.mediaclient.adapters.MsgAdapter;
-import cn.nodemedia.mediaclient.models.Msg;
-import cn.nodemedia.mediaclient.utils.FileUtil;
-import cn.nodemedia.mediaclient.utils.LogUtil;
-import cn.nodemedia.mediaclient.utils.SharedPreUtil;
+import cn.serge.adapters.MsgAdapter;
+import cn.serge.models.Msg;
+import cn.serge.utils.FileUtil;
+import cn.serge.utils.LogUtil;
+import cn.serge.utils.SharedPreUtil;
 
 public class LivePlayerDemoActivity extends Activity implements OnClickListener {
     // LinearLayout liner0;

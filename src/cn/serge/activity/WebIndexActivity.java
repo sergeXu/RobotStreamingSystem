@@ -1,10 +1,12 @@
-package cn.nodemedia.mediaclient;
+package cn.serge.activity;
 
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import cn.nodemedia.mediaclient.R;
 
 public class WebIndexActivity extends Activity {
     private WebView webView;

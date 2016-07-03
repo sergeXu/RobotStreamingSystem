@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">视频直播</string>
-    <string name="app_SN">1.4.0.4</string>
+    <string name="app_SN">1.4.0.5</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="playAddress">rtmp://121.42.159.86:1935/testLive/livestream</string>

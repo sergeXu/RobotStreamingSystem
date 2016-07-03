@@ -1,4 +1,4 @@
-package cn.nodemedia.mediaclient;
+package cn.serge.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,6 +17,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import cn.nodemedia.mediaclient.LivePlayerDemoActivity;
+import cn.nodemedia.mediaclient.LivePublisherDemoActivity;
+import cn.nodemedia.mediaclient.R;
 
 public class MainActivity extends Activity implements OnClickListener {
     private Button playerBtn, toTalkBtn, webIndexBtn;

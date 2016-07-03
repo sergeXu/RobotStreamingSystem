@@ -1,4 +1,4 @@
-package cn.nodemedia.mediaclient;
+package cn.serge.activity;
 
 /**
  * Created by serge on 2016/1/13.
@@ -11,7 +11,8 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 
-import cn.nodemedia.mediaclient.utils.SharedPreUtil;
+import cn.nodemedia.mediaclient.R;
+import cn.serge.utils.SharedPreUtil;
 
 public class FragmentPreferences extends Activity {
     // public static final String PREFS_NAME="MainSetting";
