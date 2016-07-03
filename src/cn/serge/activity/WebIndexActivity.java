@@ -26,7 +26,7 @@ public class WebIndexActivity extends Activity {
             }
         });
 
-        webView.loadUrl("http://www.cmhds.net/");
+        webView.loadUrl(getString(R.string.websiteAddress));
     }
 
 }
