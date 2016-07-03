@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="视频播放设置" >
+        <EditTextPreference
+            android:dialogTitle="请输入播放网络地址"
+            android:key="edittext_preference_playAddress"
+            android:defaultValue="@string/playAddress"
+            android:summary="@string/playAddress"
+            android:title="播放网络地址" />
+        <EditTextPreference
+            android:dialogTitle="请输入播放缓冲区大小"
+            android:key="edittext_preference_playBuffer"
+            android:defaultValue="300"
+            android:summary="300"
+            android:numeric="integer"
+            android:title="播放缓冲区大小" />
+        <EditTextPreference
+            android:dialogTitle="请输入播放最大缓冲区大小"
+            android:key="edittext_preference_maxPlayBuffer"
+            android:defaultValue="1200"
+            android:summary="1200"
+            android:numeric="integer"
+            android:title="播放最大缓冲区大小" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_logShow"
+            android:summary="是否在播放界面显示调试日志"
+            android:defaultValue="false"
+            android:title="日志显示" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_videoShow"
+            android:summary="是否在播放界面显示视频"
+            android:defaultValue="true"
+            android:title="视频显示" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_videoParamShow"
+            android:summary="是否在播放界面显示视频流参数"
+            android:defaultValue="false"
+            android:title="视频流参数显示" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_logBufferSize"
+            android:summary="是否在log中输出缓冲区变化"
+            android:defaultValue="false"
+            android:title="播放缓冲区日志" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="视频发布设置" >
+        <CheckBoxPreference
+            android:key="checkbox_preference_LowLatencyMode"
+            android:summary="低码率低清晰度模式"
+            android:defaultValue="false"
+            android:title="低码率模式" />
+        <EditTextPreference
+            android:dialogTitle="请输入发布网络地址"
+            android:key="edittext_preference_pubAddress"
+            android:defaultValue="@string/pubAddress"
+            android:summary="@string/pubAddress"
+            android:title="发布网络地址" />
+        <PreferenceScreen
+            android:summary="测试发布视频"
+            android:title="发布视频" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="cn.nodemedia.mediaclient"
+                android:targetClass="cn.nodemedia.mediaclient.LivePublisherDemoActivity" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="聊天服务地址设置" >
+        <EditTextPreference
+            android:dialogTitle="请输入聊天室地址"
+            android:key="edittext_preference_ChattingAddress"
+            android:defaultValue="@string/ChattingAddress"
+            android:summary="@string/ChattingAddress"
+            android:title="聊天室地址" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_AutoRecMsg"
+            android:summary="视频播放时自动开启后台聊天信息接收"
+            android:defaultValue="true"
+            android:title="聊天信息自动接收" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="用户设置" >
+        <EditTextPreference
+            android:dialogTitle="请输入你的名称"
+            android:key="edittext_preference_ClientName"
+            android:defaultValue="@string/ClientName"
+            android:summary="@string/ClientName"
+            android:title="用户名称" />
+        <EditTextPreference
+            android:title="用户ID"
+            android:key="edittext_preference_ClientId"
+            android:defaultValue="0"
+            android:summary="0"
+            android:editable="false"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="机器人控制" >
+        <EditTextPreference
+            android:dialogTitle="请输入机器人IP"
+            android:key="edittext_preference_RobotIp"
+            android:defaultValue="@string/RobotIp"
+            android:summary="@string/RobotIp"
+            android:title="远程机器人IP" />
+        <EditTextPreference
+            android:title="远程机器人端口号"
+            android:key="edittext_preference_RobotPort"
+            android:numeric="integer"
+            android:defaultValue="@string/RobotPort"
+            android:summary="@string/RobotPort"
+            android:dialogTitle="请输入机器人端口号"
+            />
+        <CheckBoxPreference
+            android:key="checkbox_preference_isRemoteControl"
+            android:summary="视频播放时开始远程遥控功能"
+            android:defaultValue="false"
+            android:title="远程遥控界面" />
+    </PreferenceCategory>
+</PreferenceScreen>

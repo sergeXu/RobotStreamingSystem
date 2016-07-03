@@ -1,0 +1,260 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+     >
+     
+	    <SurfaceView
+	        android:id="@+id/surfaceview1"
+	        android:layout_centerInParent="true"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" >
+	    </SurfaceView>
+	    
+	    <EditText
+	        android:id="@+id/editText3"
+	        android:layout_width="240dp"
+	        android:layout_height="240dp"
+	        android:background="#00000000"
+	        android:clickable="false"
+	        android:cursorVisible="false"
+	        android:gravity="top"
+	        android:longClickable="false"
+	        android:textColor="#EEEEEE"
+	        android:textSize="15sp" />
+	    
+	    <LinearLayout
+	        	android:id="@+id/talkLinearLayoutInAct"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true" 
+				android:layout_alignParentLeft="true"
+				android:orientation="vertical"
+		         >
+
+
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:id="@+id/listAndControl"
+				>
+			<ListView
+				        android:id="@+id/msg_list_view"
+				        android:layout_width="220dp"
+				        android:layout_height="280dp"
+				        android:divider="#0000" >
+
+				    </ListView>
+			<LinearLayout android:orientation="vertical"
+				android:layout_weight="2"
+				android:layout_height="match_parent"
+				android:layout_width="0dp"
+				android:id="@+id/RemoteControlPannel"
+				android:visibility="gone"
+				>
+
+				<!-- 控制按钮部分 -->
+				<Button
+					android:id="@+id/ButtonForward"
+					android:layout_width="60dp"
+					android:layout_height="wrap_content"
+					android:text="向前"
+					android:paddingLeft="15dp"
+					android:paddingRight="35dp"
+					android:padding="5dp"
+					android:layout_gravity="center_horizontal"
+					/>
+				<RelativeLayout
+					android:orientation="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_margin="5dp"
+					>
+					<Button
+						android:id="@+id/ButtonLeft"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:text="向左"
+						android:padding="5dp"
+						android:layout_alignParentLeft="true"
+						/>
+					<Button
+						android:id="@+id/ButtonRight"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:text="向右"
+						android:padding="5dp"
+						android:layout_alignParentRight="true"
+						/>
+
+				</RelativeLayout>
+				<Button
+					android:id="@+id/ButtonBackward"
+					android:layout_width="60dp"
+					android:layout_height="wrap_content"
+					android:text="向后"
+					android:padding="5dp"
+					android:layout_gravity="center_horizontal"
+					/>
+				<Button
+					android:id="@+id/ButtoStop"
+					android:layout_width="60dp"
+					android:layout_height="wrap_content"
+					android:text="停止"
+					android:padding="5dp"
+					android:layout_marginTop="5dp"
+					android:layout_gravity="center_horizontal"
+					/>
+				<RelativeLayout
+					android:orientation="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_margin="5dp"
+					android:padding="5dp">
+				<Button
+					android:id="@+id/buttonConnect"
+					android:layout_width="55dp"
+					android:layout_height="wrap_content"
+					android:text="连接"
+					android:padding="5dp"
+					android:layout_alignParentLeft="true"
+					/>
+				<Button
+					android:id="@+id/buttonRelease"
+					android:layout_width="55dp"
+					android:layout_height="wrap_content"
+					android:text="断开"
+					android:layout_alignParentRight="true"
+					/>
+				</RelativeLayout>
+
+				</LinearLayout>>
+			</LinearLayout>
+			<!-- 控制按钮部分 结束-->
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content" 
+				        android:layout_marginLeft="8dp"
+				        android:layout_marginRight="8dp">
+		
+				        <EditText
+				            android:id="@+id/input_text"
+				            android:layout_width="0dp"
+				            android:layout_height="wrap_content"
+				            android:layout_weight="1"
+							android:textColor="#999"
+							android:textColorHint="#9888"
+				            android:hint="请输入内容"
+				            android:textSize="15sp"
+				            android:maxLines="2" />
+		
+			        <Button
+			            android:id="@+id/send"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+						android:paddingLeft="20dp"
+						android:paddingRight="20dp"
+						android:layout_marginLeft="5dp"
+			            android:textSize="16sp"
+						android:background="@drawable/white_button"
+			            android:text="发送" />
+		        
+   		 			</LinearLayout>
+    	
+	
+	    
+	
+	    <LinearLayout
+	        android:id="@+id/LinearLayout_channelPlain"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="0dp"
+			android:background="@color/tv_click"
+			android:baselineAligned="false">
+	
+	        <Button
+	            android:id="@+id/button_refresh"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_margin="5dp"
+	            android:layout_weight="3"
+	            android:text="聊天室"
+	            android:textColor="#111111"
+				android:background="@drawable/white_button"
+	            android:textSize="15sp" />
+	
+	        <TextView
+	            android:id="@+id/textView_channelId"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_margin="5dp"
+	            android:textSize="15sp"
+	            android:textColor="#EEEEEE"
+	            android:gravity="center"
+	            android:text="频道ID" />
+	
+	        <EditText
+	            android:id="@+id/editText_ChannelId"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_weight="2"
+	            android:textSize="15sp"
+				android:textColorHint="#9888"
+	            android:textColor="#999"
+				android:hint="0"
+	            android:ems="5"
+	            android:layout_margin="5dp"
+	            android:inputType="number" >
+	        </EditText>
+	
+	        <Button
+	            android:id="@+id/button_changeChannel"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:layout_margin="5dp"
+	            android:textSize="15sp"
+	            android:textColor="#111111"
+	            android:layout_weight="3"
+				android:background="@drawable/white_button"
+	            android:text="切换频道" />
+	        
+	    </LinearLayout>
+	 </LinearLayout>
+
+	 <ImageButton
+	     android:id="@+id/play_cap_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Cap" 
+	     android:src="@android:drawable/ic_input_get" />
+	<TextView
+
+		android:text="video param"
+		android:id="@+id/textView_videoParam"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="#4a228888"
+		android:layout_alignParentRight="true"
+		android:layout_below="@+id/play_cap_button"
+		android:textColor="#EEE"
+		android:gravity="center_horizontal"
+		android:visibility="visible"/>
+	<TextView
+
+		android:text="video info"
+		android:id="@+id/textView_videoInfo"
+		android:layout_width="240dp"
+		android:layout_height="240dp"
+		android:background="#4a888888"
+		android:layout_centerInParent="true"
+		android:layout_gravity="center_horizontal"
+		android:textColor="#EEE"
+		android:gravity="center_horizontal"
+		android:visibility="gone"/>
+
+</RelativeLayout>
