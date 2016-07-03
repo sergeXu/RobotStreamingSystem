@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import cn.nodemedia.mediaclient.R;
+import cn.serge.R;
 import cn.serge.adapters.MsgAdapter;
 import cn.serge.models.Msg;
 import cn.serge.utils.SharedPreUtil;

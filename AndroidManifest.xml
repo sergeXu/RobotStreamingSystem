@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.nodemedia.mediaclient"
+    package="cn.serge"
     android:versionCode="1"
     android:versionName="@string/app_SN" >
     <uses-sdk
@@ -35,14 +35,14 @@
         </activity>
 
         <activity
-            android:name=".LivePlayerDemoActivity"
+            android:name="cn.nodemedia.mediaclient.LivePlayerDemoActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/NoTitleBarAppTheme" >
         </activity>
         
         <activity
-            android:name=".LivePublisherDemoActivity"
+            android:name="cn.nodemedia.mediaclient.LivePublisherDemoActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/NoTitleBarAppTheme" >
         </activity>

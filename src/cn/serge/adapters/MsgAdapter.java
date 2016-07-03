@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import cn.nodemedia.mediaclient.R;
+import cn.serge.R;
 import cn.serge.models.Msg;
 
 public class MsgAdapter extends ArrayAdapter<Msg> {

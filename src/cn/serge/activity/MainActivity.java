@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import cn.nodemedia.mediaclient.LivePlayerDemoActivity;
 import cn.nodemedia.mediaclient.LivePublisherDemoActivity;
-import cn.nodemedia.mediaclient.R;
+import cn.serge.R;
 
 public class MainActivity extends Activity implements OnClickListener {
     private Button playerBtn, toTalkBtn, webIndexBtn;

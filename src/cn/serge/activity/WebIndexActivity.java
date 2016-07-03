@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import cn.nodemedia.mediaclient.R;
+import cn.serge.R;
 
 public class WebIndexActivity extends Activity {
     private WebView webView;

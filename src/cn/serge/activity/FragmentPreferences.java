@@ -11,7 +11,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 
-import cn.nodemedia.mediaclient.R;
+import cn.serge.R;
 import cn.serge.utils.SharedPreUtil;
 
 public class FragmentPreferences extends Activity {
