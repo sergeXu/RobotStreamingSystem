@@ -23,7 +23,6 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-import cn.serge.R;
 import cn.nodemedia.LivePublisher;
 import cn.nodemedia.LivePublisher.LivePublishDelegate;
 import cn.serge.utils.LogUtil;

@@ -35,7 +35,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.serge.R;
 import cn.nodemedia.LivePlayer;
 import cn.nodemedia.LivePlayer.LivePlayerDelegate;
 import cn.serge.adapters.MsgAdapter;
