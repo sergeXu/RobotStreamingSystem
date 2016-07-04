@@ -64,7 +64,10 @@
             android:configChanges="orientation|screenSize"
             android:theme="@style/NoTitleBarAppTheme" >
         </activity>
-        <activity android:label="MDMultiDemoActivity" android:name="cn.serge.activity.VideoPlayerActivity" android:configChanges="screenSize|orientation" android:screenOrientation="landscape"/>
+        <activity android:label="MDMultiDemoActivity"
+            android:name="cn.serge.activity.VideoPlayerActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
