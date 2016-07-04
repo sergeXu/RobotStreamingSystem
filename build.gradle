@@ -11,6 +11,10 @@ apply plugin: 'com.android.application'
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.1.1'
+    //required, enough for most devices.
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.4.5'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.4.5'
+    compile project(path: ':vrlib')
 }
 
 android {
