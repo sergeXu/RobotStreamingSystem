@@ -31,7 +31,9 @@
     <string name="mainButton1">观看视频直播</string>
     <string name="mainButton2">发布直播</string>
     <string name="mainButton3">浏览官方主页</string>
-
+    <!--> 网页浏览部分设置 -->
     <string name="websiteAddress">http://121.42.159.86</string>
+    <!--> 全景播放部分设置 -->
+    <string name="VrVideoUrl">file:///mnt/sdcard/football.mp4</string>
 
 </resources>

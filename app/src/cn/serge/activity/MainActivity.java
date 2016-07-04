@@ -22,6 +22,7 @@ import android.widget.Toast;
 import cn.nodemedia.mediaclient.LivePlayerDemoActivity;
 import cn.nodemedia.mediaclient.LivePublisherDemoActivity;
 import cn.nodemedia.mediaclient.R;
+import cn.serge.utils.SharedPreUtil;
 
 public class MainActivity extends Activity implements OnClickListener {
     private Button playerBtn, toTalkBtn, webIndexBtn;
@@ -172,8 +173,8 @@ public class MainActivity extends Activity implements OnClickListener {
         }
         else if(item.getItemId()==menu_toVrActivity)
         {
+            String url = (String) SharedPreUtil.get(MainActivity.this, "edittext_preference_VrVideoUrl", getString(R.string.VrVideoUrl));
            // String url = et.getText().toString();
-            String url = "file:///mnt/sdcard/football.mp4";
             if (url.trim()!=""){
                 MD360PlayerActivity.startVideo(MainActivity.this, Uri.parse(url));
             } else {

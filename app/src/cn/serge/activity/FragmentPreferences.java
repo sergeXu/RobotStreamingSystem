@@ -81,6 +81,8 @@ public class FragmentPreferences extends Activity {
             connectionPref.setSummary(prefs.getString("edittext_preference_RobotIp", ""));
             connectionPref = findPreference("edittext_preference_RobotPort");
             connectionPref.setSummary(prefs.getString("edittext_preference_RobotPort", ""));
+            connectionPref = findPreference("edittext_preference_VrVideoUrl");
+            connectionPref.setSummary(prefs.getString("edittext_preference_VrVideoUrl", ""));
         }
 
         //实时监听设置改变的处理
@@ -138,6 +140,11 @@ public class FragmentPreferences extends Activity {
                 connectionPref.setSummary(prefs.getString(key, ""));
             }
             else if (key.equals("edittext_preference_RobotPort")) {
+                Preference connectionPref = findPreference(key);
+                // Set summary to be the user-description for the selected value
+                connectionPref.setSummary(prefs.getString(key, ""));
+            }
+            else if (key.equals("edittext_preference_VrVideoUrl")) {
                 Preference connectionPref = findPreference(key);
                 // Set summary to be the user-description for the selected value
                 connectionPref.setSummary(prefs.getString(key, ""));

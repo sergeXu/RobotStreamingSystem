@@ -45,8 +45,9 @@ public class VideoPlayerActivity extends MD360PlayerActivity {
 
     @Override
     protected MDVRLibrary createVRLibrary() {
+        //设置初始模式
         return MDVRLibrary.with(this)
-                .displayMode(MDVRLibrary.DISPLAY_MODE_NORMAL)
+                .displayMode(MDVRLibrary.DISPLAY_MODE_GLASS)
                 .interactiveMode(MDVRLibrary.INTERACTIVE_MODE_MOTION)
                 .asVideo(new MDVRLibrary.IOnSurfaceReadyCallback() {
                     @Override

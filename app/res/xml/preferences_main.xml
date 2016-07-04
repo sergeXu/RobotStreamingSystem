@@ -114,4 +114,12 @@
             android:defaultValue="false"
             android:title="远程遥控界面" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="全景视频播放" >
+        <EditTextPreference
+            android:dialogTitle="请输入视频URL"
+            android:key="edittext_preference_VrVideoUrl"
+            android:defaultValue="@string/VrVideoUrl"
+            android:summary="@string/VrVideoUrl"
+            android:title="全景视频播放位置" />
+    </PreferenceCategory>
 </PreferenceScreen>
