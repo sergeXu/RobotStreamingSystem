@@ -26,6 +26,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private Button playerBtn, toTalkBtn, webIndexBtn;
     private ImageButton settingBtn, exitBtn, infoShowBtn;
     private static final int menu_setting = 1;
+    private static final int menu_toVrActivity = 2;
     private static final String TAG = "rtmpVideoMain";
 
     @Override
@@ -155,6 +156,7 @@ public class MainActivity extends Activity implements OnClickListener {
     public boolean onCreateOptionsMenu(Menu menu) {
         // TODO Auto-generated method stub
         menu.add(0, menu_setting, 1, "设置").setIcon(android.R.drawable.ic_menu_preferences);
+        menu.add(1, menu_toVrActivity, 2, "全景视频播放").setIcon(android.R.drawable.ic_menu_compass);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -162,7 +164,18 @@ public class MainActivity extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
         super.onOptionsItemSelected(item);
-        Intent intent = new Intent(this, FragmentPreferences.class);
+        Intent intent;
+        if(item.getItemId()==menu_setting) {
+            intent = new Intent(this, FragmentPreferences.class);
+        }
+        else if(item.getItemId()==menu_toVrActivity)
+        {
+            intent = new Intent(this,WebIndexActivity.class);
+        }
+        else
+        {
+            return false;
+        }
         startActivity(intent);
         return false;
     }
