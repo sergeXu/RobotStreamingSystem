@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">视频直播</string>
+    <string name="app_SN">1.4.0.7</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="playAddress">rtmp://121.42.159.86:1935/testLive/livestream</string>
+    <string name="pubAddress">rtmp://121.42.159.86:1935/testLive/livestream</string>
+    <string name="ChattingAddress">121.42.159.86</string>
+    <string name="ClientName">我</string>
+    <string name="ConnectAvalible">Welcome</string>
+    <string name="ConnectNotAvalible">网络不可用，请开启网络!</string>
+    <!--> 机器人控制部分设置 -->
+    <string name="RobotIp">0.0.0.0</string>
+    <string name="RobotPort">9999</string>
+
+
+    <string name="mainAppName">应用名称：   视频直播</string>
+    <string name="mainAppSN">版本信息：   </string>
+    <string name="mainAppMaker">版权所有：   Serge Xu</string>
+    <string name="mainAppContact">联系方式：   SJTU</string>
+    <string name="mainAppEmail">联系邮箱：   serge_xu@163.com</string>
+    <string name="mainAppTitle">应用程序版本信息</string>
+
+    <string name="exitApp">退出应用</string>
+    <string name="ensureExitApp">确定退出应用吗？</string>
+    <string name="continueExitApp">继续退出</string>
+    <string name="cancel">取消</string>
+
+    <string name="mainButton1">观看视频直播</string>
+    <string name="mainButton2">发布直播</string>
+    <string name="mainButton3">浏览官方主页</string>
+
+    <string name="websiteAddress">http://121.42.159.86</string>
+
+</resources>

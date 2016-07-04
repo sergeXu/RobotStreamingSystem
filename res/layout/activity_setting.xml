@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放地址" />
+
+        <EditText
+            android:id="@+id/editText_play_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缓冲" />
+        <EditText
+            android:id="@+id/editText_buffersize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="8"
+            android:inputType="number"
+            android:singleLine="true" />
+		<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最大缓冲" />
+        <EditText
+            android:id="@+id/editText_maxbuffersize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="8"
+            android:inputType="number"
+            android:singleLine="true" />
+        <CheckBox
+            android:id="@+id/checkBox_play_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日志" />
+
+        <CheckBox
+            android:id="@+id/CheckBox_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存设置并测试视频" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:weightSum="3" >
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名: " />
+        <EditText
+            android:id="@+id/editText_Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:maxLength="10"
+            android:singleLine="true" />
+        <TextView
+            android:id="@+id/textViewPubId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布ID: "
+             />
+        <TextView
+            android:id="@+id/textView_ID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLength="20"
+            android:singleLine="true" />
+        
+		 <CheckBox
+            android:id="@+id/CheckBox_lowLatencyMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="低延时" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/textViewTalkingServer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="聊天服务器地址" />
+
+        <EditText
+            android:id="@+id/editText_talking_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true" >
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false"
+        >
+
+        <Button
+            android:id="@+id/button_ConfirmPersonInfo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15sp"
+            android:text="保存用户信息" />
+    <Button
+        android:id="@+id/buttontalkingSet"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:text="保存聊天室设置" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp" >
+
+        <TextView
+            android:id="@+id/textViewPublishAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布地址" />
+
+        <EditText
+            android:id="@+id/editText_pub_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true" >
+        </EditText>
+    </LinearLayout>
+    <Button
+        android:id="@+id/buttonPub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存设置并发布视频" />
+
+
+</LinearLayout>

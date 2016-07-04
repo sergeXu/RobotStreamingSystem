@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    >
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_main_Sysinfo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@android:drawable/ic_menu_info_details"
+        android:background="#00000000"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+         />
+
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+
+        <Button
+        android:id="@+id/buttonToPlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mainButton1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:background="@drawable/white_button"
+       />
+ 	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+        
+    <Button
+        android:id="@+id/buttonToTalk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mainButton2"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
+		android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" 
+        android:textSize="20sp"
+        android:background="@drawable/white_button"
+		/>
+	</LinearLayout>
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <Button
+            android:id="@+id/buttonToWebIndex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mainButton3"
+            android:padding="10dp"
+            android:background="@drawable/white_button"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+        	android:layout_marginRight="15dp"
+        	android:textSize="20sp"
+
+            />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal" >
+
+        
+	    <ImageButton
+	            android:id="@+id/imageButtonToSetting"
+	            android:layout_width="100dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="25dp"
+	            android:layout_marginRight="25dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="50"
+	            android:src="@android:drawable/ic_menu_manage" 
+	            android:layout_gravity="end"
+	            />
+	    <ImageButton
+	            android:id="@+id/imageButtonToExit"
+                android:layout_width="100dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="25dp"
+	            android:layout_marginRight="25dp"
+                android:layout_marginBottom="15dp"
+	            android:src="@android:drawable/ic_delete" 
+	            android:layout_gravity="end"
+	            />
+	   
+	</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
