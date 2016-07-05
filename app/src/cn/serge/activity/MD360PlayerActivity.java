@@ -12,6 +12,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import cn.nodemedia.mediaclient.R;
+import cn.serge.adapters.SpinnerHelper;
+
 import com.asha.vrlib.MDVRLibrary;
 
 /**

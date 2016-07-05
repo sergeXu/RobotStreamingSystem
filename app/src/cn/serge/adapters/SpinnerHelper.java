@@ -1,4 +1,4 @@
-package cn.serge.activity;
+package cn.serge.adapters;
 
 import android.app.Activity;
 import android.util.SparseArray;

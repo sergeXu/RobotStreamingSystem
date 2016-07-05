@@ -1,4 +1,4 @@
-package cn.serge.activity;
+package cn.serge.adapters;
 
 import android.content.Context;
 import android.content.res.AssetManager;

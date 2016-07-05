@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.asha.vrlib.MDVRLibrary;
 import cn.nodemedia.mediaclient.R;
+import cn.serge.adapters.MediaPlayerWrapper;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
