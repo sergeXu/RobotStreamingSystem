@@ -59,16 +59,16 @@
        android:layout_alignParentBottom="true"
        android:layout_width="40dp"
        android:layout_height="25dp"
-       android:background="@drawable/ic_vr_mode_btn_pink"
-       />
+       android:background="@drawable/ic_vr_mode_btn_pink"  />
+
    <Button
        android:id="@+id/button_vr_white"
-       android:layout_marginRight="10dp"
-       android:layout_centerVertical="true"
+       android:layout_width="25dp"
+       android:layout_height="40dp"
        android:layout_alignParentRight="true"
-       android:layout_width="40dp"
-       android:layout_height="25dp"
-       android:rotation="270"
+       android:layout_centerVertical="true"
+       android:layout_marginRight="10dp"
        android:background="@drawable/ic_vr_mode_btn_white"
-       />
+        />
+
 </RelativeLayout>

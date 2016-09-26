@@ -131,13 +131,14 @@ public abstract class MD360PlayerActivity extends Activity {
                     }
                 })
                 .init(R.id.spinner_projection);
+
         vrButtonWhite = (Button)findViewById(R.id.button_vr_white);
         vrButtonWhite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(isVrMode) {
 //                    Toast.makeText(MD360PlayerActivity.this, "VR button clicked", Toast.LENGTH_SHORT).show();
-                    vrButtonPink.setVisibility(View.INVISIBLE);
+                    vrButtonPink.setVisibility(View.GONE);
                     vrButtonWhite.setVisibility(View.VISIBLE);
                 }
                 else
@@ -145,12 +146,12 @@ public abstract class MD360PlayerActivity extends Activity {
                     //切换为VRmode
                     isVrMode = true;
                     vrButtonPink.setVisibility(View.VISIBLE);
-                    vrButtonWhite.setVisibility(View.INVISIBLE);
+                    vrButtonWhite.setVisibility(View.GONE);
                     mVRLibrary.switchDisplayMode(MD360PlayerActivity.this, 102);
                 }
             }
         });
-        vrButtonWhite.setVisibility(View.INVISIBLE);
+        vrButtonWhite.setVisibility(View.GONE);
         vrButtonPink = (Button)findViewById(R.id.button_vr_pink);
         vrButtonPink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,14 +160,14 @@ public abstract class MD360PlayerActivity extends Activity {
                     //切换为非VR
 //                    Toast.makeText(MD360PlayerActivity.this, "VR2 button clicked", Toast.LENGTH_SHORT).show();
                     isVrMode = false;
-                    vrButtonPink.setVisibility(View.INVISIBLE);
+                    vrButtonPink.setVisibility(View.GONE);
                     vrButtonWhite.setVisibility(View.VISIBLE);
                     mVRLibrary.switchDisplayMode(MD360PlayerActivity.this, 101);
                 }
                 else
                 {
                     vrButtonPink.setVisibility(View.VISIBLE);
-                    vrButtonWhite.setVisibility(View.INVISIBLE);
+                    vrButtonWhite.setVisibility(View.GONE);
                 }
             }
         });
