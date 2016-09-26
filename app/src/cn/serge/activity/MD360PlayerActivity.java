@@ -10,10 +10,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Spinner;
 
 import cn.nodemedia.mediaclient.R;
 import cn.serge.adapters.SpinnerHelper;
-
+import cn.serge.utils.SharedPreUtil;
 import com.asha.vrlib.MDVRLibrary;
 
 /**
@@ -23,6 +24,8 @@ import com.asha.vrlib.MDVRLibrary;
  * hzqiujiadi ashqalcn@gmail.com
  */
 public abstract class MD360PlayerActivity extends Activity {
+
+    private boolean isDebugMode = false;
 
     private static final String TAG = "MD360PlayerActivity";
 
@@ -66,6 +69,8 @@ public abstract class MD360PlayerActivity extends Activity {
 
     private MDVRLibrary mVRLibrary;
 
+    private Spinner spDisplayMode,spInteractiveMode,spProjectionMode;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,8 +90,12 @@ public abstract class MD360PlayerActivity extends Activity {
 
         // init VR Library
         mVRLibrary = createVRLibrary();
+        initSubviews();
 
-        SpinnerHelper.with(this)
+    }
+    void initSubviews()
+    {
+        spDisplayMode = SpinnerHelper.with(this)
                 .setData(sDisplayMode)
                 .setDefault(mVRLibrary.getDisplayMode())
                 .setClickHandler(new SpinnerHelper.ClickHandler() {
@@ -97,7 +106,7 @@ public abstract class MD360PlayerActivity extends Activity {
                 })
                 .init(R.id.spinner_display);
 
-        SpinnerHelper.with(this)
+        spInteractiveMode =  SpinnerHelper.with(this)
                 .setData(sInteractiveMode)
                 .setDefault(mVRLibrary.getInteractiveMode())
                 .setClickHandler(new SpinnerHelper.ClickHandler() {
@@ -108,7 +117,7 @@ public abstract class MD360PlayerActivity extends Activity {
                 })
                 .init(R.id.spinner_interactive);
 
-        SpinnerHelper.with(this)
+        spProjectionMode =  SpinnerHelper.with(this)
                 .setData(sProjectionMode)
                 .setDefault(mVRLibrary.getProjectionMode())
                 .setClickHandler(new SpinnerHelper.ClickHandler() {
@@ -118,7 +127,19 @@ public abstract class MD360PlayerActivity extends Activity {
                     }
                 })
                 .init(R.id.spinner_projection);
+        isDebugMode = (Boolean) SharedPreUtil.get(this, "checkbox_preference_debugMode", false);
+        if(isDebugMode)
+        {
+            spDisplayMode.setVisibility(View.VISIBLE);
+            spInteractiveMode.setVisibility(View.VISIBLE);
+            spProjectionMode.setVisibility(View.VISIBLE);
+        }
+        else{
+            spDisplayMode.setVisibility(View.GONE);
+            spInteractiveMode.setVisibility(View.GONE);
+            spProjectionMode.setVisibility(View.GONE);
 
+        }
     }
 
     @Override

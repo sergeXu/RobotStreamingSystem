@@ -122,4 +122,11 @@
             android:summary="@string/VrVideoUrl"
             android:title="全景视频播放位置" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="开发者选项" >
+        <CheckBoxPreference
+            android:key="checkbox_preference_debugMode"
+            android:summary="是否开启开发调试选项"
+            android:defaultValue="false"
+            android:title="开发调试选项" />
+    </PreferenceCategory>
 </PreferenceScreen>

@@ -179,7 +179,7 @@ void initSubViews()
         {
             String url = (String) SharedPreUtil.get(MainActivity.this, "edittext_preference_VrVideoUrl", getString(R.string.VrVideoUrl));
            // String url = et.getText().toString();
-            if (url != null && url.trim().equals("")) {
+            if (url != null && !url.trim().equals("")) {
                 MD360PlayerActivity.startVideo(MainActivity.this, Uri.parse(url));
             } else {
                 Toast.makeText(MainActivity.this, "empty url!", Toast.LENGTH_SHORT).show();
