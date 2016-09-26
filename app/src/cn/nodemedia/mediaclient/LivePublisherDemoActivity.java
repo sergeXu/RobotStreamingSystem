@@ -60,21 +60,7 @@ public class LivePublisherDemoActivity extends Activity implements OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encoder);
         isStarting = false;
-        sv = (SurfaceView) findViewById(R.id.cameraView);
-        micBtn = (Button) findViewById(R.id.button_mic);
-        swtBtn = (Button) findViewById(R.id.button_sw);
-        videoBtn = (Button) findViewById(R.id.button_video);
-        flashBtn = (Button) findViewById(R.id.button_flash);
-        camBtn = (Button) findViewById(R.id.button_cam);
-        capBtn = (ImageButton) findViewById(R.id.pub_cap_button);
-        pubIdText = (TextView) findViewById(R.id.pub_textView_pubId);
-
-        micBtn.setOnClickListener(this);
-        swtBtn.setOnClickListener(this);
-        videoBtn.setOnClickListener(this);
-        flashBtn.setOnClickListener(this);
-        camBtn.setOnClickListener(this);
-        capBtn.setOnClickListener(this);
+        initSubviews();
 
         LivePublisher.init(this); // 1.初始化
         LivePublisher.setDelegate(this); // 2.设置事件回调
@@ -138,6 +124,28 @@ public class LivePublisherDemoActivity extends Activity implements OnClickListen
          */
         LivePublisher.startPreview(sv, getWindowManager().getDefaultDisplay().getRotation(), LivePublisher.CAMERA_BACK); // 5.开始预览 如果传null 则只发布音频
 
+        udpPubInfo();
+    }
+void initSubviews()
+    {
+        sv = (SurfaceView) findViewById(R.id.cameraView);
+        micBtn = (Button) findViewById(R.id.button_mic);
+        swtBtn = (Button) findViewById(R.id.button_sw);
+        videoBtn = (Button) findViewById(R.id.button_video);
+        flashBtn = (Button) findViewById(R.id.button_flash);
+        camBtn = (Button) findViewById(R.id.button_cam);
+        capBtn = (ImageButton) findViewById(R.id.pub_cap_button);
+        pubIdText = (TextView) findViewById(R.id.pub_textView_pubId);
+
+        micBtn.setOnClickListener(this);
+        swtBtn.setOnClickListener(this);
+        videoBtn.setOnClickListener(this);
+        flashBtn.setOnClickListener(this);
+        camBtn.setOnClickListener(this);
+        capBtn.setOnClickListener(this);
+    }
+    void udpPubInfo()
+    {
         /**
          * 使用Udp发送直播频道信息
          */
@@ -197,7 +205,6 @@ public class LivePublisherDemoActivity extends Activity implements OnClickListen
             }).start();
         }
     }
-
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

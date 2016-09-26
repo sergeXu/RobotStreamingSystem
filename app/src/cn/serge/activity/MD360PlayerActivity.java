@@ -80,6 +80,9 @@ public abstract class MD360PlayerActivity extends Activity {
         // set content view
         setContentView(R.layout.activity_md_multi);
 
+        getWindow().addFlags(WindowManager.LayoutParams.
+                FLAG_KEEP_SCREEN_ON);   //应用运行时，保持屏幕高亮，不锁屏
+
         // init VR Library
         mVRLibrary = createVRLibrary();
 

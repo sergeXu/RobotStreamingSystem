@@ -35,6 +35,23 @@ public class MainActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //直接进入播放页面
+        //MainActivity.this.startActivity(new Intent(MainActivity.this,LivePlayerDemoActivity.class));
+        //toTalkBtn.setVisibility(View.GONE);
+        initSubViews();
+        checkNetState(this);
+    }
+
+//    private String getVersionName() throws Exception {
+//        // 获取packagemanager的实例
+//        PackageManager packageManager = getPackageManager();
+//        // getPackageName()是你当前类的包名，0代表是获取版本信息
+//        PackageInfo packInfo = packageManager.getPackageInfo(getPackageName(), 0);
+//        String version = packInfo.versionName;
+//        return version;
+//    }
+void initSubViews()
+{
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 //                R.drawable.bg_main);
 //        // 创建Palette对象
@@ -52,38 +69,25 @@ public class MainActivity extends Activity implements OnClickListener {
 //                        window.setStatusBarColor(vibrant.getRgb());
 //                    }
 //                });
-        playerBtn = (Button) findViewById(R.id.buttonToPlay);
-        toTalkBtn = (Button) findViewById(R.id.buttonToTalk);
-        settingBtn = (ImageButton) findViewById(R.id.imageButtonToSetting);
-        exitBtn = (ImageButton) findViewById(R.id.imageButtonToExit);
-        webIndexBtn = (Button) findViewById(R.id.buttonToWebIndex);
-        infoShowBtn = (ImageButton) findViewById(R.id.imageButton_main_Sysinfo);
-        playerBtn.getBackground().setAlpha(150);
-        settingBtn.getBackground().setAlpha(150);
-        webIndexBtn.getBackground().setAlpha(150);
-        toTalkBtn.getBackground().setAlpha(150);
-        exitBtn.getBackground().setAlpha(150);
-        playerBtn.setOnClickListener(this);
-        settingBtn.setOnClickListener(this);
-        toTalkBtn.setOnClickListener(this);
-        webIndexBtn.setOnClickListener(this);
-        exitBtn.setOnClickListener(this);
-        exitBtn.getBackground().setAlpha(150);
-        infoShowBtn.setOnClickListener(this);
-        //直接进入播放页面
-        //MainActivity.this.startActivity(new Intent(MainActivity.this,LivePlayerDemoActivity.class));
-        //toTalkBtn.setVisibility(View.GONE);
-        checkNetState(this);
-    }
-
-    private String getVersionName() throws Exception {
-        // 获取packagemanager的实例
-        PackageManager packageManager = getPackageManager();
-        // getPackageName()是你当前类的包名，0代表是获取版本信息
-        PackageInfo packInfo = packageManager.getPackageInfo(getPackageName(), 0);
-        String version = packInfo.versionName;
-        return version;
-    }
+    playerBtn = (Button) findViewById(R.id.buttonToPlay);
+    toTalkBtn = (Button) findViewById(R.id.buttonToTalk);
+    settingBtn = (ImageButton) findViewById(R.id.imageButtonToSetting);
+    exitBtn = (ImageButton) findViewById(R.id.imageButtonToExit);
+    webIndexBtn = (Button) findViewById(R.id.buttonToWebIndex);
+    infoShowBtn = (ImageButton) findViewById(R.id.imageButton_main_Sysinfo);
+    playerBtn.getBackground().setAlpha(150);
+    settingBtn.getBackground().setAlpha(150);
+    webIndexBtn.getBackground().setAlpha(150);
+    toTalkBtn.getBackground().setAlpha(150);
+    exitBtn.getBackground().setAlpha(150);
+    playerBtn.setOnClickListener(this);
+    settingBtn.setOnClickListener(this);
+    toTalkBtn.setOnClickListener(this);
+    webIndexBtn.setOnClickListener(this);
+    exitBtn.setOnClickListener(this);
+    exitBtn.getBackground().setAlpha(150);
+    infoShowBtn.setOnClickListener(this);
+}
 
     @Override
     public void onClick(View v) {
@@ -175,7 +179,7 @@ public class MainActivity extends Activity implements OnClickListener {
         {
             String url = (String) SharedPreUtil.get(MainActivity.this, "edittext_preference_VrVideoUrl", getString(R.string.VrVideoUrl));
            // String url = et.getText().toString();
-            if (url.trim()!=""){
+            if (url != null && url.trim().equals("")) {
                 MD360PlayerActivity.startVideo(MainActivity.this, Uri.parse(url));
             } else {
                 Toast.makeText(MainActivity.this, "empty url!", Toast.LENGTH_SHORT).show();
@@ -193,6 +197,11 @@ public class MainActivity extends Activity implements OnClickListener {
     {
         super.onResume();
         checkNetState(this);
+    }
+    @Override
+    public void onPause()
+    {
+        super.onPause();
     }
     public void checkNetState (Context context) {
         ConnectivityManager connectionManager = ( ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
