@@ -52,5 +52,23 @@
        android:id="@+id/progress"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content" />
-
+   <Button
+       android:id="@+id/button_vr_pink"
+       android:layout_marginBottom="10dp"
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"
+       android:layout_width="40dp"
+       android:layout_height="25dp"
+       android:background="@drawable/ic_vr_mode_btn_pink"
+       />
+   <Button
+       android:id="@+id/button_vr_white"
+       android:layout_marginRight="10dp"
+       android:layout_centerVertical="true"
+       android:layout_alignParentRight="true"
+       android:layout_width="40dp"
+       android:layout_height="25dp"
+       android:rotation="270"
+       android:background="@drawable/ic_vr_mode_btn_white"
+       />
 </RelativeLayout>
