@@ -26,7 +26,7 @@ import cn.serge.utils.SharedPreUtil;
 
 public class MainActivity extends Activity implements OnClickListener {
     private Button playerBtn, toTalkBtn, webIndexBtn;
-    private ImageButton settingBtn, exitBtn, infoShowBtn;
+    private ImageButton settingBtn, exitBtn, infoShowBtn, vrEntrance;
     private static final int menu_setting = 1;
     private static final int menu_toVrActivity = 2;
     private static final String TAG = "rtmpVideoMain";
@@ -75,6 +75,7 @@ void initSubViews()
     exitBtn = (ImageButton) findViewById(R.id.imageButtonToExit);
     webIndexBtn = (Button) findViewById(R.id.buttonToWebIndex);
     infoShowBtn = (ImageButton) findViewById(R.id.imageButton_main_Sysinfo);
+    vrEntrance  = (ImageButton) findViewById(R.id.imageButton_main_vrEntrance);
     playerBtn.getBackground().setAlpha(150);
     settingBtn.getBackground().setAlpha(150);
     webIndexBtn.getBackground().setAlpha(150);
@@ -87,6 +88,7 @@ void initSubViews()
     exitBtn.setOnClickListener(this);
     exitBtn.getBackground().setAlpha(150);
     infoShowBtn.setOnClickListener(this);
+    vrEntrance.setOnClickListener(this);
 }
 
     @Override
@@ -131,6 +133,9 @@ void initSubViews()
                     }
                 });
                 dialogExit.show();
+                break;
+            case R.id.imageButton_main_vrEntrance:
+                this.goToVrAvtivity();
                 break;
             case R.id.imageButton_main_Sysinfo:
                 //
@@ -177,13 +182,7 @@ void initSubViews()
         }
         else if(item.getItemId()==menu_toVrActivity)
         {
-            String url = (String) SharedPreUtil.get(MainActivity.this, "edittext_preference_VrVideoUrl", getString(R.string.VrVideoUrl));
-           // String url = et.getText().toString();
-            if (url != null && !url.trim().equals("")) {
-                MD360PlayerActivity.startVideo(MainActivity.this, Uri.parse(url));
-            } else {
-                Toast.makeText(MainActivity.this, "empty url!", Toast.LENGTH_SHORT).show();
-            }
+            this.goToVrAvtivity();
             //intent = new Intent(this,WebIndexActivity.class);
         }
         else
@@ -213,6 +212,17 @@ void initSubViews()
         else {
            // Toast.makeText(context,"network is not avalible",Toast.LENGTH_SHORT).show();
             Toast.makeText(context,getString(R.string.ConnectNotAvalible),Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void goToVrAvtivity()
+    {
+        String url = (String) SharedPreUtil.get(MainActivity.this, "edittext_preference_VrVideoUrl", getString(R.string.VrVideoUrl));
+        // String url = et.getText().toString();
+        if (url != null && !url.trim().equals("")) {
+            MD360PlayerActivity.startVideo(MainActivity.this, Uri.parse(url));
+        } else {
+            Toast.makeText(MainActivity.this, "empty url!", Toast.LENGTH_SHORT).show();
         }
     }
 }
