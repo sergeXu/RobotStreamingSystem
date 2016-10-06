@@ -332,11 +332,11 @@ public class LivePlayerDemoActivity extends Activity implements OnClickListener 
                         }
                         else {
                             LogUtil.w(TAG, "is Lefting");
-                            isLeft=false;
                         }
                     } else if (event.getAction() == MotionEvent.ACTION_UP) {
                         toleftBtn.setAlpha((float)1.0);
                         remoteControlSendMessage("a_up");
+                        isLeft=false;
                     }
                     return true;
                 }
