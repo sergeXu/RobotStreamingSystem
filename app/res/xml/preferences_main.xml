@@ -121,6 +121,11 @@
             android:defaultValue="@string/VrVideoUrl"
             android:summary="@string/VrVideoUrl"
             android:title="全景视频播放位置" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_vrLooping"
+            android:summary="是否开启全景视频循环播放"
+            android:defaultValue="false"
+            android:title="全景视频循环播放" />
     </PreferenceCategory>
     <PreferenceCategory android:title="开发者选项" >
         <CheckBoxPreference

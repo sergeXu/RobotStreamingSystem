@@ -38,7 +38,6 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
                 return false;
             }
         });
-
         enableHardwareDecoding();
     }
 
@@ -124,7 +123,11 @@ public class MediaPlayerWrapper implements IMediaPlayer.OnPreparedListener {
         }
 
     }
-
+    public void setLooping(boolean isLoop)
+    {
+        if (mPlayer == null) return;
+        mPlayer.setLooping(isLoop);
+    }
     public void setPreparedListener(IMediaPlayer.OnPreparedListener mPreparedListener) {
         this.mPreparedListener = mPreparedListener;
     }

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.asha.vrlib.MDVRLibrary;
 import cn.nodemedia.mediaclient.R;
 import cn.serge.adapters.MediaPlayerWrapper;
+import cn.serge.utils.SharedPreUtil;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
@@ -19,6 +20,7 @@ public class VideoPlayerActivity extends MD360PlayerActivity {
 
     private MediaPlayerWrapper mMediaPlayerWrapper = new MediaPlayerWrapper();
 
+    private boolean isLooping = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,9 @@ public class VideoPlayerActivity extends MD360PlayerActivity {
                 getVRLibrary().onTextureResize(width, height);
             }
         });
-
+        //循环播放设置
+        isLooping = (Boolean) SharedPreUtil.get(this, "checkbox_preference_vrLooping", false);
+        mMediaPlayerWrapper.setLooping(isLooping);
         Uri uri = getUri();
         if (uri != null){
             mMediaPlayerWrapper.openRemoteFile(uri.toString());
