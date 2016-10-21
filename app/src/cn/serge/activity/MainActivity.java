@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Environment;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -219,6 +220,7 @@ void initSubViews()
     {
         String url = (String) SharedPreUtil.get(MainActivity.this, "edittext_preference_VrVideoUrl", getString(R.string.VrVideoUrl));
         // String url = et.getText().toString();
+      //  String sdcard = Environment.getExternalStorageDirectory().toString();
         if (url != null && !url.trim().equals("")) {
             MD360PlayerActivity.startVideo(MainActivity.this, Uri.parse(url));
         } else {
