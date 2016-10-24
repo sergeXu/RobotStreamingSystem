@@ -124,8 +124,13 @@
         <CheckBoxPreference
             android:key="checkbox_preference_vrLooping"
             android:summary="是否开启全景视频循环播放"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="全景视频循环播放" />
+        <CheckBoxPreference
+            android:key="checkbox_preference_showMode"
+            android:summary="是否开启展示模式"
+            android:defaultValue="true"
+            android:title="展示模式选项" />
     </PreferenceCategory>
     <PreferenceCategory android:title="开发者选项" >
         <CheckBoxPreference

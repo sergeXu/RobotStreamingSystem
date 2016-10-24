@@ -31,11 +31,19 @@ public class MainActivity extends Activity implements OnClickListener {
     private static final int menu_setting = 1;
     private static final int menu_toVrActivity = 2;
     private static final String TAG = "rtmpVideoMain";
+    private static boolean isShowMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        isShowMode = (Boolean) SharedPreUtil.get(this, "checkbox_preference_showMode", true);
+        if(isShowMode)
+        {
+            setContentView(R.layout.activity_main_showmode);
+        }
+        else {
+            setContentView(R.layout.activity_main);
+        }
         //直接进入播放页面
         //MainActivity.this.startActivity(new Intent(MainActivity.this,LivePlayerDemoActivity.class));
         //toTalkBtn.setVisibility(View.GONE);
@@ -70,26 +78,41 @@ void initSubViews()
 //                        window.setStatusBarColor(vibrant.getRgb());
 //                    }
 //                });
-    playerBtn = (Button) findViewById(R.id.buttonToPlay);
-    toTalkBtn = (Button) findViewById(R.id.buttonToTalk);
-    settingBtn = (ImageButton) findViewById(R.id.imageButtonToSetting);
-    exitBtn = (ImageButton) findViewById(R.id.imageButtonToExit);
-    webIndexBtn = (Button) findViewById(R.id.buttonToWebIndex);
-    infoShowBtn = (ImageButton) findViewById(R.id.imageButton_main_Sysinfo);
-    vrEntrance  = (ImageButton) findViewById(R.id.imageButton_main_vrEntrance);
-    playerBtn.getBackground().setAlpha(150);
-    settingBtn.getBackground().setAlpha(150);
-    webIndexBtn.getBackground().setAlpha(150);
-    toTalkBtn.getBackground().setAlpha(150);
-    exitBtn.getBackground().setAlpha(150);
-    playerBtn.setOnClickListener(this);
-    settingBtn.setOnClickListener(this);
-    toTalkBtn.setOnClickListener(this);
-    webIndexBtn.setOnClickListener(this);
-    exitBtn.setOnClickListener(this);
-    exitBtn.getBackground().setAlpha(150);
-    infoShowBtn.setOnClickListener(this);
-    vrEntrance.setOnClickListener(this);
+    if(this.isShowMode)
+    {
+        settingBtn = (ImageButton) findViewById(R.id.imageButtonToSetting);
+        exitBtn = (ImageButton) findViewById(R.id.imageButtonToExit);
+        infoShowBtn = (ImageButton) findViewById(R.id.imageButton_main_Sysinfo);
+        vrEntrance = (ImageButton) findViewById(R.id.imageButton_main_vrEntrance);
+        exitBtn.getBackground().setAlpha(150);
+        settingBtn.getBackground().setAlpha(150);
+        vrEntrance.getBackground().setAlpha(150);
+        exitBtn.setOnClickListener(this);
+        settingBtn.setOnClickListener(this);
+        infoShowBtn.setOnClickListener(this);
+        vrEntrance.setOnClickListener(this);
+    }
+    else {
+        playerBtn = (Button) findViewById(R.id.buttonToPlay);
+        toTalkBtn = (Button) findViewById(R.id.buttonToTalk);
+        settingBtn = (ImageButton) findViewById(R.id.imageButtonToSetting);
+        exitBtn = (ImageButton) findViewById(R.id.imageButtonToExit);
+        webIndexBtn = (Button) findViewById(R.id.buttonToWebIndex);
+        infoShowBtn = (ImageButton) findViewById(R.id.imageButton_main_Sysinfo);
+        vrEntrance = (ImageButton) findViewById(R.id.imageButton_main_vrEntrance);
+        playerBtn.getBackground().setAlpha(150);
+        settingBtn.getBackground().setAlpha(150);
+        webIndexBtn.getBackground().setAlpha(150);
+        toTalkBtn.getBackground().setAlpha(150);
+        exitBtn.getBackground().setAlpha(150);
+        playerBtn.setOnClickListener(this);
+        settingBtn.setOnClickListener(this);
+        toTalkBtn.setOnClickListener(this);
+        webIndexBtn.setOnClickListener(this);
+        exitBtn.setOnClickListener(this);
+        infoShowBtn.setOnClickListener(this);
+        vrEntrance.setOnClickListener(this);
+    }
 }
 
     @Override
@@ -204,6 +227,8 @@ void initSubViews()
         super.onPause();
     }
     public void checkNetState (Context context) {
+        //展示模式不提示网络状态
+        if(this.isShowMode) return;
         ConnectivityManager connectionManager = ( ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectionManager.getActiveNetworkInfo();
         if(networkInfo != null && networkInfo.isAvailable())

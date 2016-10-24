@@ -39,7 +39,7 @@ public class VideoPlayerActivity extends MD360PlayerActivity {
             }
         });
         //循环播放设置
-        isLooping = (Boolean) SharedPreUtil.get(this, "checkbox_preference_vrLooping", false);
+        isLooping = (Boolean) SharedPreUtil.get(this, "checkbox_preference_vrLooping", true);
         mMediaPlayerWrapper.setLooping(isLooping);
         Uri uri = getUri();
         if (uri != null){
